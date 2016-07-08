@@ -44,6 +44,10 @@ function parse(configString) {
     .map(trim)
     .filter(nonComment)
     .filter(nonEmptyString);
+
+  if (! values.length)
+    return [];
+
   var entries = [];
 
   hostLines.forEach(function(hostLine, i) {
